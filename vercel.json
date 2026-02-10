@@ -1,0 +1,10 @@
+{
+  "buildCommand": "echo 'Static HTML - no build required'",
+  "outputDirectory": ".",
+  "rewrites": [
+    { "source": "/", "destination": "/morning/today.html" },
+    { "source": "/morning", "destination": "/morning/today.html" },
+    { "source": "/afternoon", "destination": "/afternoon/today.html" },
+    { "source": "/reddit", "destination": "/afternoon/today.html" }
+  ]
+}
