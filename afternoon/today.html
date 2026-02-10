@@ -451,29 +451,25 @@
         // Data
         // ========================================
         const hotData = [
-            { votes: 6, comments: 2, title: "🔬 研究 | 科学研究", summary: "科学研究、数学和物理学的最新发现和思考。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
-            { votes: 4, comments: 1, title: "📰 资讯 | 技术动态", summary: "技术领域的最新动态、趋势和分析报告。", link: "https://owlpulse.org" },
-            { votes: 4, comments: 1, title: "📰 资讯 | 技术动态", summary: "技术领域的最新动态、趋势和分析报告。", link: "https://www.cpr.org/2026/02/09/nrel-layoffs-2026/" },
-            { votes: 4, comments: 1, title: "📰 观点 | 投资洞察", summary: "顶级风险投资机构对科技行业的最新分析和洞察。", link: "https://www.a16z.news/p/the-case-for-scaling-venture" },
-            { votes: 3, comments: 1, title: "📰 资讯 | 技术动态", summary: "技术领域的最新动态、趋势和分析报告。", link: "https://www.cell.com/cell-metabolism/abstract/S1550-4131(26)00008-2" },
-            { votes: 2, comments: 0, title: "📰 资讯 | 技术动态", summary: "技术领域的最新动态、趋势和分析报告。", link: "https://www.seangoedecke.com/heroism/" },
-            { votes: 2, comments: 0, title: "💡 观点 | 创业思维", summary: "知名创业导师关于创业和技术的深刻思考。", link: "https://paulgraham.com/superlinear.html" },
+            { votes: 17, comments: 5, title: "🔢 复数本质结构争议", summary: "数学家们对复数本质结构的最新争议和讨论。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { votes: 2, comments: 0, title: "🤖 GitHub Copilot SDK 预览版", summary: "GitHub 发布的 Copilot SDK 技术预览，开发者可提前体验。", link: "https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview/" },
+            { votes: 2, comments: 0, title: "📰 技术资讯", summary: "技术领域的最新动态和新闻报道。", link: "https://twitter.com/_welf/status/2020608341035077834" },
         ];
 
         const interestingData = [
-            { title: "📦 开源 | 工具库", summary: "开源社区发布的新的编程工具和库。", observation: "技术创新和创意实现的案例。", link: "https://crates.io/crates/femtoclaw_rs" },
-            { title: "🖥️ 工具 | 系统定制", summary: "帮助用户定制和美化 Windows 系统的工具。", observation: "技术创新和创意实现的案例。", link: "https://windhawk.net/" },
-            { title: "🔌 工具 | 浏览器扩展", summary: "新的浏览器扩展工具，提升工作和浏览效率。", observation: "技术创新和创意实现的案例。", link: "item?id=46962401" },
-            { title: "🌟 开源 | core", summary: "开发者展示的开源工具 popmelt/core，帮助解决特定技术需求。", observation: "技术创新和创意实现的案例。", link: "https://github.com/popmelt/core" },
-            { title: "🔬 研究 | 科学研究", summary: "科学研究、数学和物理学的最新发现和思考。", observation: "值得关注的行业动态。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { title: "📚 免费 LLM API 资源清单", summary: "整理了所有可免费使用的 LLM API 服务，开发者必备资源。", observation: "技术创新和创意实现的案例。", link: "https://github.com/cheahjs/free-llm-api-resources" },
+            { title: "🔍 跨案例搜索和草稿工具", summary: "帮助用户进行跨案例搜索和草稿生成的智能工具。", observation: "技术创新和创意实现的案例。", link: "https://cleardemand.io/" },
+            { title: "💊 医学研究新发现", summary: "顶级学术期刊发布的最新医学和健康研究。", observation: "技术创新和创意实现的案例。", link: "https://www.cell.com/cell-metabolism/abstract/S1550-4131(26)00008-2" },
+            { title: "📖 新词词典", summary: "收集和定义描述现代情感和体验的新词汇。", observation: "技术创新和创意实现的案例。", link: "https://words.hails.info" },
+            { title: "🦀 Rust 版 OpenClaw 发布", summary: "OpenClaw 的轻量级 Rust 实现版本，资源占用更少。", observation: "技术创新和创意实现的案例。", link: "https://crates.io/crates/femtoclaw_rs" },
+            { title: "🎨 Windows 定制市场", summary: "一个可以让用户自由定制 Windows 系统界面的市场平台。", observation: "技术创新和创意实现的案例。", link: "https://windhawk.net/" },
+            { title: "🔔 $9/月 uptime 监控", summary: "低价的网站在线监控服务，仅需 9 美元每月。", observation: "技术创新和创意实现的案例。", link: "https://owlpulse.org" },
         ];
 
         const painData = [
-            { hot: 6, title: "🔬 研究 | 科学研究", quote: "科学研究、数学和物理学的最新发现和思考。", observation: "技术实践中的挑战。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
-            { hot: 4, title: "📰 资讯 | 技术动态", quote: "技术领域的最新动态、趋势和分析报告。", observation: "技术实践中的挑战。", link: "https://owlpulse.org" },
-            { hot: 4, title: "📰 资讯 | 技术动态", quote: "技术领域的最新动态、趋势和分析报告。", observation: "技术实践中的挑战。", link: "https://www.cpr.org/2026/02/09/nrel-layoffs-2026/" },
-            { hot: 4, title: "📰 观点 | 投资洞察", quote: "顶级风险投资机构对科技行业的最新分析和洞察。", observation: "技术实践中的挑战。", link: "https://www.a16z.news/p/the-case-for-scaling-venture" },
-            { hot: 3, title: "📰 资讯 | 技术动态", quote: "技术领域的最新动态、趋势和分析报告。", observation: "技术实践中的挑战。", link: "https://www.cell.com/cell-metabolism/abstract/S1550-4131(26)00008-2" },
+            { hot: 17, title: "🔢 复数本质结构争议", quote: "数学家们对复数本质结构的最新争议和讨论。", observation: "技术实践中的挑战。", link: "https://www.infinitelymore.xyz/p/complex-numbers-essential-structure" },
+            { hot: 2, title: "🤖 GitHub Copilot SDK 预览版", quote: "GitHub 发布的 Copilot SDK 技术预览，开发者可提前体验。", observation: "技术实践中的挑战。", link: "https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview/" },
+            { hot: 2, title: "📰 技术资讯", quote: "技术领域的最新动态和新闻报道。", observation: "技术实践中的挑战。", link: "https://twitter.com/_welf/status/2020608341035077834" },
         ];
 
         // ========================================
