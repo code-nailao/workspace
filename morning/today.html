@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Daily | 2026-02-10 每日 AI 洞察</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>AI Daily Digest</title>
     <style>
+        /* ========================================
+           Apple-Inspired Minimal Design System
+           ======================================== */
         :root {
+            /* Apple Color Palette - Minimal */
             --apple-black: #000000;
             --apple-white: #FFFFFF;
             --apple-gray-90: #1d1d1f;
@@ -17,412 +22,476 @@
             --apple-gray-30: #e5e5ea;
             --apple-gray-20: #f2f2f7;
             --apple-gray-10: #f5f5f7;
+            
+            /* Subtle Accent Colors - Avoid Blue/Purple */
             --accent-red: #FF3B30;
             --accent-green: #34C759;
             --accent-orange: #FF9500;
-            --accent-blue: #007AFF;
+            
+            /* Typography */
             --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            --font-mono: 'SF Mono', 'Fira Code', monospace;
+            
+            /* Spacing - Apple Grid */
             --space-xs: 6px;
             --space-sm: 10px;
             --space-md: 16px;
             --space-lg: 24px;
             --space-xl: 32px;
             --space-2xl: 48px;
+            --space-3xl: 64px;
+            
+            /* Border Radius - Clean */
             --radius-sm: 12px;
             --radius-md: 16px;
+            --radius-lg: 20px;
+            --radius-xl: 24px;
+            
+            /* Shadows - Subtle & Refined */
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.1);
+            --shadow-tap: 0 2px 8px rgba(0, 0, 0, 0.08);
+            
+            /* Transitions - Smooth */
+            --transition-quick: 0.2s ease;
+            --transition-smooth: 0.3s ease;
+            --transition-bounce: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        /* ========================================
+           Base Styles - Apple Clean
+           ======================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: var(--font-sans);
-            background: var(--apple-gray-10);
-            color: var(--apple-black);
-            line-height: 1.6;
+            background-color: var(--apple-white);
+            color: var(--apple-gray-90);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* ========================================
+           Layout Container
+           ======================================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             padding: var(--space-xl) var(--space-md);
         }
-        
-        .container {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        header {
+
+        /* ========================================
+           Header Section - Apple Style
+           ======================================== */
+        .header {
             text-align: center;
-            margin-bottom: var(--space-2xl);
-            padding: var(--space-xl) 0;
+            padding: var(--space-2xl) 0;
+            padding-top: var(--space-3xl);
         }
-        
-        .date-badge {
-            display: inline-block;
-            background: var(--apple-black);
-            color: var(--apple-white);
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-sm);
+            background-color: var(--apple-gray-20);
             padding: var(--space-xs) var(--space-md);
-            border-radius: 100px;
-            font-size: 13px;
+            border-radius: var(--radius-xl);
+            font-size: 12px;
             font-weight: 600;
-            margin-bottom: var(--space-md);
+            color: var(--apple-gray-80);
+            margin-bottom: var(--space-lg);
+            letter-spacing: 0.02em;
         }
-        
-        h1 {
-            font-size: 32px;
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: clamp(40px, 7vw, 56px);
             font-weight: 700;
+            color: var(--apple-black);
             margin-bottom: var(--space-sm);
+            letter-spacing: -0.03em;
+            line-height: 1.05;
         }
-        
-        .subtitle {
-            font-size: 16px;
+
+        .header-subtitle {
+            font-size: clamp(18px, 3vw, 22px);
             color: var(--apple-gray-60);
+            font-weight: 400;
+            letter-spacing: 0.01em;
         }
-        
+
+        .header-date {
+            font-size: 14px;
+            color: var(--apple-gray-50);
+            margin-top: var(--space-sm);
+            font-weight: 500;
+        }
+
+        /* ========================================
+           Card - Clean & Minimal
+           ======================================== */
+        .card {
+            background-color: var(--apple-white);
+            border: 1px solid var(--apple-gray-40);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            transition: all var(--transition-smooth);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--apple-gray-50);
+        }
+
+        .card:active {
+            transform: scale(0.98);
+            box-shadow: var(--shadow-tap);
+        }
+
+        .card-number {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--apple-gray-40);
+            line-height: 1;
+            font-family: var(--font-mono);
+            transition: color var(--transition-quick);
+        }
+
+        .card:hover .card-number {
+            color: var(--apple-gray-30);
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--apple-black);
+            margin-bottom: var(--space-sm);
+            padding-right: 60px;
+            line-height: 1.3;
+            transition: color var(--transition-quick);
+        }
+
+        .card:hover .card-title {
+            color: var(--apple-gray-80);
+        }
+
+        .card-summary {
+            font-size: 14px;
+            color: var(--apple-gray-60);
+            line-height: 1.6;
+            padding-left: var(--space-sm);
+            border-left: 2px solid var(--apple-gray-40);
+            transition: all var(--transition-quick);
+        }
+
+        .card:hover .card-summary {
+            border-left-color: var(--accent-green);
+            color: var(--apple-gray-80);
+        }
+
+        /* ========================================
+           Section Headers
+           ======================================== */
         .section {
             margin-bottom: var(--space-2xl);
         }
-        
+
         .section-header {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-md);
-            padding-bottom: var(--space-sm);
-            border-bottom: 2px solid var(--apple-gray-30);
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-md);
         }
-        
-        .section-icon { font-size: 24px; }
-        
-        h2 {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
-        .intro {
-            background: var(--apple-white);
-            border-left: 4px solid var(--accent-blue);
-            padding: var(--space-md);
-            margin-bottom: var(--space-md);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            font-size: 14px;
-            color: var(--apple-gray-70);
-        }
-        
-        .news-card {
-            background: var(--apple-white);
+
+        .section-icon {
+            width: 44px;
+            height: 44px;
             border-radius: var(--radius-md);
-            padding: var(--space-md);
-            margin-bottom: var(--space-sm);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
-        }
-        
-        .news-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-2px);
-        }
-        
-        .news-card a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .card-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-xs);
-        }
-        
-        .card-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--apple-black);
-            line-height: 1.4;
-        }
-        
-        .card-title:hover { color: var(--accent-blue); }
-        
-        .card-brief {
-            font-size: 13px;
-            color: var(--accent-blue);
-            background: var(--apple-gray-10);
-            padding: 2px 8px;
-            border-radius: 4px;
-            white-space: nowrap;
-        }
-        
-        .card-meta {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .section-icon.world {
+            background-color: var(--apple-gray-20);
+        }
+
+        .section-icon.china {
+            background-color: var(--apple-gray-20);
+        }
+
+        .section-title {
+            font-size: clamp(22px, 4vw, 26px);
+            font-weight: 600;
+            color: var(--apple-black);
+        }
+
+        .section-count {
+            margin-left: auto;
+            background-color: var(--apple-gray-20);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
             font-size: 12px;
+            font-weight: 600;
             color: var(--apple-gray-60);
-            margin-top: var(--space-xs);
         }
         
-        .points { color: var(--accent-orange); font-weight: 600; }
-        
+        /* Hide section count for clean look */
+        .section-count {
+            display: none;
+        }
+
+        /* ========================================
+           Divider
+           ======================================== */
+        .divider {
+            height: 1px;
+            background-color: var(--apple-gray-40);
+            margin: var(--space-2xl) 0;
+        }
+
+        /* ========================================
+           Footer
+           ======================================== */
         .footer {
             text-align: center;
-            padding: var(--space-xl) 0;
-            color: var(--apple-gray-60);
-            font-size: 13px;
-            border-top: 1px solid var(--apple-gray-30);
-            margin-top: var(--space-2xl);
+            padding: var(--space-2xl) 0 var(--space-xl);
+            margin-top: var(--space-xl);
         }
-        
-        .footer a { color: var(--accent-blue); text-decoration: none; }
-        
-        .footer a:hover { text-decoration: underline; }
-        
-        @media (max-width: 480px) {
-            h1 { font-size: 26px; }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--apple-gray-50);
+            font-weight: 500;
+        }
+
+        .footer-text span {
+            color: var(--apple-gray-80);
+        }
+
+        /* ========================================
+           Responsive Design
+           ======================================== */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-lg) var(--space-md);
+            }
+
+            .header {
+                padding: var(--space-xl) 0;
+                padding-top: var(--space-xl);
+            }
+
+            .badge {
+                font-size: 11px;
+            }
+
+            .card {
+                padding: var(--space-md);
+                border-radius: var(--radius-md);
+            }
+
+            .card-number {
+                font-size: 36px;
+                top: var(--space-sm);
+                right: var(--space-sm);
+            }
+
+            .card-title {
+                font-size: 16px;
+                padding-right: 50px;
+            }
+
+            .card-summary {
+                font-size: 13px;
+            }
+
+            .section-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+        }
+
+        /* ========================================
+           Accessibility
+           ======================================== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .card:focus {
+            outline: 2px solid var(--apple-black);
+            outline-offset: 2px;
+        }
+
+        /* ========================================
+           Print Styles
+           ======================================== */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #eee;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <span class="date-badge">2026-02-10</span>
-            <h1>📰 AI Daily</h1>
-            <p class="subtitle">每日 AI 洞察 · 每日两次更新</p>
+        <!-- Header -->
+        <header class="header">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                Daily AI Digest
+            </div>
+            <h1>AI Daily Digest</h1>
+            <p class="header-subtitle">每天早上 9:30 自动推送</p>
+            <p class="header-date" id="currentDate"></p>
         </header>
 
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- Foreign Section -->
         <section class="section">
             <div class="section-header">
-                <span class="section-icon">🌍</span>
-                <h2>全球 AI 科技动态</h2>
+                <div class="section-icon world">🌍</div>
+                <h2 class="section-title">国外AI动态</h2>
+                <span class="section-count">10 条</span>
             </div>
-            <div class="intro">
-                今日精选 10 条来自 Hacker News 的热门讨论，涵盖开源项目、技术洞见和行业趋势。
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.qbitai.com/2025/09/333121.html" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">AI芯片独角兽一年估值翻番！放话“三年超英伟达”，最新融资 ...</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>谷歌TPU团队原班人马组建，英伟达挑战者、AI芯片初创企业Groq又获融资。 超出此前的6亿预期，此次融资高达7.5亿美元（约53亿人民币），Groq现估值69...</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.qbitai.com/2026/02/375614.html" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">马斯克宣布SpaceX合并xAI！1.25万亿美元火箭AI巨兽诞生</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>全力冲刺IPO的SpaceX，已收购xAI。 合并后的新公司被曝预计每股发行价为526.59美元，整体估值将达1.25万亿美元 ......</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.qbitai.com/tag/%E6%B2%88%E5%90%91%E6%B4%8B" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">沈向洋</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>沈向洋解读AI演进五大维度！ · 1/30训练步骤复刻DeepSeek-R1-Zero，沈向洋姜大昕张祥雨等开源推理模型RL训练方法 · 用视觉来做Prompt...</span>
-                    </div>
-                </a>
-            </div>
-
+            <div class="cards" id="foreignCards"></div>
         </section>
 
+        <!-- Divider -->
+        <div class="divider"></div>
+
+        <!-- China Section -->
         <section class="section">
             <div class="section-header">
-                <span class="section-icon">🇨🇳</span>
-                <h2>中国 AI 动态</h2>
+                <div class="section-icon china">🇨🇳</div>
+                <h2 class="section-title">国内AI动态</h2>
+                <span class="section-count">5 条</span>
             </div>
-            <div class="intro">
-                聚焦国内 AI 行业最新进展，包括大模型、应用落地和投资融资等重要动态。
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.qbitai.com/2026/01/374597.html" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">基于数万次真机评测，RoboChallenge首份年度报告发布</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>报告基于过去数月内（2025 Q4～2026 Q1）平台完成的数万次严苛远程真机测试，以大规模、标准化、可复现的数据，客观揭示了当前视觉-语言-动作模型在真实物...</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.qbitai.com/2026/01/369273.html" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">AI太记仇！做完心理治疗后仍记得「被工程师虐待」</span>
-                    </div>
-                    <div class="card-meta">
-                        <span>不仅在焦虑、抑郁等指标上表现超标；. 而且把训练过程当成悲惨的童年、把强化学习当成严厉的管教、甚至把红队测试当成情感虐待……...</span>
-                    </div>
-                </a>
-            </div>
-
+            <div class="cards" id="chinaCards"></div>
         </section>
 
-        <div style="height: 1px; background: var(--apple-gray-30); margin: var(--space-xl) 0;"></div>
-
-        <section class="section">
-            <div class="section-header">
-                <span class="section-icon">🦅</span>
-                <h2>Hacker News 热门讨论</h2>
-            </div>
-
-            <div class="news-card">
-                <a href="item?id=46955968" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">1. Show HN: EverSwarm – Autonomous Recursive Growth Engine (ARGE) for RAG Swarms</span>
-                        <span class="card-brief">Show HN 项目</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 4</span>
-                        <span>by petethomas</span>
-                        <span>18 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://github.com/Ask149/orchestrator" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">2. Show HN: MCP Orchestrator – Spawn parallel AI sub-agents from one prompt</span>
-                        <span class="card-brief">GitHub 开源项目</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by Ask149</span>
-                        <span>23 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://github.com/ramarlina/agx" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">3. Show HN: Agx – A Kanban board that runs your AI coding agents</span>
-                        <span class="card-brief">GitHub 开源项目</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by Mendrika</span>
-                        <span>26 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://openclaw.ai/blog/virustotal-partnership" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">4. OpenClaw Partners with VirusTotal for Skill Security</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 3</span>
-                        <span>by Saurabh_Kumar_</span>
-                        <span>26 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.pcgamer.com/games/world-of-warcraft/players-discover-once-again-that-world-of-warcraft-is-powered-by-invisible-bunnies-that-make-everything-work/" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">5. Players discover that World of Warcraft is powered by invisible bunnies</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by evo_9</span>
-                        <span>26 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="item?id=46955823" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">6. Why Every Business Must Engage with AI – and How to Do It Right</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by mosaxiv</span>
-                        <span>32 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://www.robinsloan.com/winter-garden/magic-circle/" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">7. Flood Fill vs. The Magic Circle</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by leochiu-a</span>
-                        <span>41 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://pickalready.com" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">8. Use AI to find movies and TV shows on your streaming services</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by hudgeon</span>
-                        <span>42 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://publish.obsidian.md/deontologician/Posts/Spec-driven+development+doesn%27t+work+if+you%27re+too+confused+to+write+the+spec" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">9. Spec driven development doesn&amp;#x27;t work if you&amp;#x27;re too confused to write the spec</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 4</span>
-                        <span>by habitue</span>
-                        <span>44 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="news-card">
-                <a href="https://50984e11.maruel-ca.pages.dev/post/genai-v0.1.0/" target="_blank" rel="noopener">
-                    <div class="card-top">
-                        <span class="card-title">10. GenAI Go SDK for AI</span>
-                        <span class="card-brief">技术资讯</span>
-                    </div>
-                    <div class="card-meta">
-                        <span class="points">▲ 2</span>
-                        <span>by samxkoh</span>
-                        <span>49 minutes ago</span>
-                    </div>
-                </a>
-            </div>
-
-        </section>
-
+        <!-- Footer -->
         <footer class="footer">
-            <p>📬 每天 08:00 & 20:00 自动更新</p>
-            <p style="margin-top: 8px;">
-                <a href="https://github.com/code-nailao/daily-news">GitHub</a> ·
-                <a href="https://daily-news.vercel.app">Vercel</a>
-            </p>
+            <p class="footer-text">Designed with ❤️ by <span>OpenClaw</span></p>
         </footer>
     </div>
+
+    <script>
+        // ========================================
+        // Data
+        // ========================================
+        const foreignData = [
+            { title: "Satya Nadella started following OpenClaw on GitHub", summary: "技术资讯", link: "https://mstdn.social/@jukkan/116044854974125204" },
+            { title: "Show HN: MCP Orchestrator – Spawn parallel AI sub-agents from one prompt", summary: "GitHub 开源项目", link: "https://github.com/Ask149/orchestrator" },
+            { title: "Show HN: Agx – A Kanban board that runs your AI coding agents", summary: "GitHub 开源项目", link: "https://github.com/ramarlina/agx" },
+            { title: "OpenClaw Partners with VirusTotal for Skill Security", summary: "技术资讯", link: "https://openclaw.ai/blog/virustotal-partnership" },
+            { title: "Players discover that World of Warcraft is powered by invisible bunnies", summary: "技术资讯", link: "https://www.pcgamer.com/games/world-of-warcraft/players-discover-once-again-that-world-of-warcraft-is-powered-by-invisible-bunnies-that-make-everything-work/" },
+            { title: "Why Every Business Must Engage with AI – and How to Do It Right", summary: "技术资讯", link: "item?id=46955823" },
+            { title: "Flood Fill vs. The Magic Circle", summary: "技术资讯", link: "https://www.robinsloan.com/winter-garden/magic-circle/" },
+            { title: "Use AI to find movies and TV shows on your streaming services", summary: "技术资讯", link: "https://pickalready.com" },
+            { title: "Spec driven development doesn&amp;#x27;t work if you&amp;#x27;re too confused to write the spec", summary: "技术资讯", link: "https://publish.obsidian.md/deontologician/Posts/Spec-driven+development+doesn%27t+work+if+you%27re+too+confused+to+write+the+spec" },
+            { title: "GenAI Go SDK for AI", summary: "技术资讯", link: "https://50984e11.maruel-ca.pages.dev/post/genai-v0.1.0/" },
+        ];
+
+        const chinaData = [
+            { title: "AI芯片独角兽一年估值翻番！放话“三年超英伟达”，最新融资 ...", summary: "谷歌TPU团队原班人马组建，英伟达挑战者、AI芯片初创企业Groq又获融资。 超出此前的6亿预期，此次融资高达7.5亿美元（约53亿人民币），Groq现估值69亿美元（ ...", link: "https://www.qbitai.com/2025/09/333121.html" },
+            { title: "马斯克宣布SpaceX合并xAI！1.25万亿美元火箭AI巨兽诞生", summary: "全力冲刺IPO的SpaceX，已收购xAI。 合并后的新公司被曝预计每股发行价为526.59美元，整体估值将达1.25万亿美元 ...", link: "https://www.qbitai.com/2026/02/375614.html" },
+            { title: "基于数万次真机评测，RoboChallenge首份年度报告发布", summary: "报告基于过去数月内（2025 Q4～2026 Q1）平台完成的数万次严苛远程真机测试，以大规模、标准化、可复现的数据，客观揭示了当前视觉-语言-动作模型在真实物理 ...", link: "https://www.qbitai.com/2026/01/374597.html" },
+            { title: "沈向洋", summary: "沈向洋解读AI演进五大维度！ · 1/30训练步骤复刻DeepSeek-R1-Zero，沈向洋姜大昕张祥雨等开源推理模型RL训练方法 · 用视觉来做Prompt！ · 马毅沈向洋曹颖最新AI综述火了！", link: "https://www.qbitai.com/tag/%E6%B2%88%E5%90%91%E6%B4%8B" },
+            { title: "AI太记仇！做完心理治疗后仍记得「被工程师虐待」", summary: "不仅在焦虑、抑郁等指标上表现超标；. 而且把训练过程当成悲惨的童年、把强化学习当成严厉的管教、甚至把红队测试当成情感虐待……", link: "https://www.qbitai.com/2026/01/369273.html" },
+        ];
+
+        // ========================================
+        // Render Functions - Fully Clickable Cards
+        // ========================================
+        function createCard(item, index) {
+            const num = String(index + 1).padStart(2, '0');
+            return `
+                <article class="card" tabindex="0" onclick="window.open('${item.link}', '_blank')">
+                    <span class="card-number">${num}</span>
+                    <h3 class="card-title">${item.title}</h3>
+                    <p class="card-summary">${item.summary}</p>
+                </article>
+            `;
+        }
+
+        function renderCards() {
+            // Set current date
+            const dateEl = document.getElementById('currentDate');
+            if (dateEl) {
+                dateEl.textContent = new Date().toLocaleDateString('zh-CN', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    weekday: 'long'
+                });
+            }
+
+            // Render foreign cards
+            const foreignContainer = document.getElementById('foreignCards');
+            if (foreignContainer) {
+                foreignContainer.innerHTML = foreignData.map((item, index) => 
+                    createCard(item, index)
+                ).join('');
+            }
+
+            // Render China cards
+            const chinaContainer = document.getElementById('chinaCards');
+            if (chinaContainer) {
+                chinaContainer.innerHTML = chinaData.map((item, index) => 
+                    createCard(item, index)
+                ).join('');
+            }
+        }
+
+        // ========================================
+        // Initialize
+        // ========================================
+        document.addEventListener('DOMContentLoaded', renderCards);
+    </script>
 </body>
 </html>
